@@ -3,26 +3,64 @@ const names2 = ['irish', 'daisy', 'anna'];
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let testVar2 = "This is not a pangram." // 
 let testVar3 =[82,71,61,90] //
-let intPop1 = 1000, rate1 = 2.5, imigr1 = 50, desPop1 = 1200
+//let intPop1 = 1000, rate1 = 2.5, imigr1 = 50, desPop1 = 1200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// number
+// console.log all values from 1 to number
+// div 3 'fizz' instead of that number, div 5 'buzz', div 3 & 5 'fizzbuzz'
+
+// function loop(num){
+//     for(let i=1;i<num;i++){
+//         if(i%3===0 && i%5===0)console.log('fizzbuzz')
+//         else if(i%3===0)console.log('fizz')
+//         else if(i%5===0)console.log('buzz')
+//         else console.log(i)
+//     }
+// }
+
+// loop(31)
+
 
 // int pop 1000
-// growth rate (2% needs conversion ) positive or null float
+// growth rate (2.5% needs conversion ) positive or null float
 // new inhabitants 50 per year int
 // round down inhabitants each year
 // desired population positive int
 // return num years to reach desired population
 
+let intPop1 = 1000, rate1 = 2.5, imigr1 = 50, desPop1 = 1200
+
 function nb_year(intPop, rate, imigr, desPop){
-    // convert rate
-    rate = rate / 100
-    let cnt = 0
-    // calc growth and imigration round down
-    for(;intPop <= desPop;cnt++){        
-        intPop += Math.floor(intPop * rate) + imigr
-    }
-    return cnt
+    intPop = Math.floor(intPop*(1+rate/100)) + imigr
+    if(intPop >= desPop) return 1
+    return nb_Year(intPop, rate, imigr, desPop) + 1  
 }
 console.log(nb_year(intPop1, rate1, imigr1, desPop1))
+
+//function nb_year(intPop, rate, imigr, desPop){
+//     // convert rate
+//     rate = rate / 100
+//     let cnt = 0
+//     // calc growth and imigration round down
+//     for(;intPop <= desPop;cnt++){        
+//         intPop += Math.floor(intPop * rate) + imigr
+//     }
+//     return cnt
+// }
+// console.log(nb_year(intPop1, rate1, imigr1, desPop1))
 
 
 // integral perfect square, interger non-negative
