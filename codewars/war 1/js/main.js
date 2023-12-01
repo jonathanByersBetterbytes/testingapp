@@ -1,19 +1,26 @@
-// num of times goes round
-// encouraging message
-// 10 < "Great, now move on to tricks"
-// else "keep at it"
-function hupe(num){
-    if(num >= 10) return "Great, now move on to tricks"
-    else return "Try again"
+
+//  num 0-100
+// average score by letter "A-F"
+// 91 => A
+// take a num 0-100 and asign a letter grade
+
+function grade(s1, s2, s3){
+    let num = (s1+s2+s3)/3
+    if(num < 60) return 'F'
+    else if(num < 70) return 'D'
+    else if(num < 80) return 'C'
+    else if(num < 90) return 'B'
+    else return 'A'
+    return 'Not a valid grade'
 }
 
 
 
-
-let testVar1 = 12  // 
-let testVar2 = 2 // 
-console.log(hupe(testVar1));
-document.querySelector('h2').innerText = hupe(testVar1);
+let testVar1 = 12 // 
+let testVar2 = 82 // 
+let testVar3 = 92 // 
+console.log(grade(testVar1,testVar2,testVar3));
+document.querySelector('h2').innerText = grade(testVar1,testVar2,testVar3);
 
 
 
