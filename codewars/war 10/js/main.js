@@ -1,7 +1,11 @@
 
 
 
+console.log(duplicate([3,5,6,5,1]))  // [3,5,6,5,1,3,5,6,5,1]
 
+function duplicate(arr){
+    return arr.concat(arr)
+}
 
 
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
