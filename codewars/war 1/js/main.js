@@ -1,4 +1,45 @@
 
+const names2 = ['irish', 'daisy', 'anna'];
+let testVar1 = "The quick brown fox jumps over the lazy dog." // 
+let testVar2 = "This is not a pangram." // 
+let testVar3 =[82,71,61,90] //
+let intPop1 = 1000, rate1 = 2.5, imigr1 = 50, desPop1 = 1200
+
+// int pop 1000
+// growth rate (2% needs conversion ) positive or null float
+// new inhabitants 50 per year int
+// round down inhabitants each year
+// desired population positive int
+// return num years to reach desired population
+
+function nb_year(intPop, rate, imigr, desPop){
+    // convert rate
+    rate = rate / 100
+    let cnt = 0
+    // calc growth and imigration round down
+    for(;intPop <= desPop;cnt++){        
+        intPop += Math.floor(intPop * rate) + imigr
+    }
+    return cnt
+}
+console.log(nb_year(intPop1, rate1, imigr1, desPop1))
+
+
+// integral perfect square, interger non-negative
+// returns the next integral perfect square or -1 if number passed in is not one
+
+// take in num
+// find if IPS
+// return next IPS if it is
+
+// function findNextIntSquare(num){
+//     num = Math.sqrt(num)
+//     return num++ % 1 ? -1 : Math.pow(num, 2)
+// }
+
+// console.log(findNextIntSquare(121))
+
+
 // arr scores, my score
 // find average and compare your score
 // return true or false if your better
@@ -6,24 +47,21 @@
 // add your score to arr
 // find average of all scores
 // compare your score to avg
-function compareScore(arr, myScore){
-    arr.push(myScore)
-    let avg = arr.reduce((tot,elm) => tot += elm, 0)
-    console.log(avg)
-    console.log(avg/arr.length < myScore ? true : false)
-    return (avg/arr.length < myScore ? true : false)
-}
+// function compareScore(arr, myScore){
+//     arr.push(myScore)
+//     let avg = arr.reduce((tot,elm) => tot += elm, 0)
+//     console.log(avg)
+//     console.log(avg/arr.length < myScore ? true : false)
+//     return (avg/arr.length < myScore ? true : false)
+// }
 
 
-const names2 = ['irish', 'daisy', 'anna'];
-let testVar1 = "The quick brown fox jumps over the lazy dog." // 
-let testVar2 = "This is not a pangram." // 
-let testVar3 = [82,71,61,90] //
-let score = 99
-compareScore(testVar3, score)
-
-
-
+// const names2 = ['irish', 'daisy', 'anna'];
+// let testVar1 = "The quick brown fox jumps over the lazy dog." // 
+// let testVar2 = "This is not a pangram." // 
+// let testVar3 = [82,71,61,90] //
+// let score = 99
+// compareScore(testVar3, score)
 
 
 // Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
