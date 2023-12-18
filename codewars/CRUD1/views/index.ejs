@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MY FULL STACK APP!! EJS Ver.</title>
+  </head>
+  <body>
+    <h1>Welcome to My First Live Web App!</h1>
+    <form action="/quotes" method="POST">
+        <input type="test" placeholder="name" name="name" />
+        <input type="test" placeholder="quote" name="quote" />
+        <button id="update-button">Replace Yoda's quote</button>
+    </form>
+    <h2>Quotes</h2>
+    <ul class="quotes">
+      <% for(var i = 0; i < quotes.length; i++){ %>
+        <li class="quote">
+          <span><%= quotes[i].name %></span>
+          <span><%= quotes[i].quote %></span>
+        </li>
+      <% } %>
+    </ul>
+    <script src="/main.js"></script>
+  </body>
+</html>
