@@ -12,29 +12,37 @@ MongoClient.connect(uri)
         const quotesCollection = db.collection('quotes')
         
         app.set('view engine', 'ejs')
-        app.use(bodyParser.urlencoded({ extended: true }))
         app.listen(3000, () => console.log('listening on 3000'))
         app.use(express.static('public'))
+        app.use(bodyParser.urlencoded({ extended: true }))
         app.use(bodyParser.json())
 
         app.get('/', (req, res) => {  // Read === get
             const cursor = quotesCollection.find()
             cursor.toArray()
-                .then(results => res.render('index.ejs', { quotes: results }))  // display the records on the webpage
+                .then(results => {
+                    res.render('index.ejs', { quotes: results })
+                })  // display the records
                 .catch(error => console.log(error))
             
             //res.send('Hello World')
             //res.sendFile(__dirname + '/index.html')
         })
         
-        app.post('/quotes', (req, res) => {  // Create === post
-            // quotesCollection
-            //     .insertOne(req.body)
-            //     .then(() => res.redirect('/'))
-            //     .catch(error => console.log(error))
+        app.put('/quotes', (req, res) => {
+            console.log(req.body+' put')
+            quotesCollection
+                .insertOne(req.body)
+                .then(() => res.redirect('/'))
+                .catch(error => console.log(error))
+            
+        })
+        
+        app.post('/quotes', (req, res) => {  // Create/Update === post
+            console.log(req.body+' testing')
             quotesCollection
                 .findOneAndUpdate(
-                    { name: 'Yoda'},
+                    { name: req.body.name},
                     {
                         $set: {
                             name: req.body.name,
@@ -43,17 +51,22 @@ MongoClient.connect(uri)
                     },
                     { upsert: true }
                 )
-                .then(result => console.log(result.body))
+                .then(result => console.log(result))
+                .then(() => res.redirect('/'))
                 .catch(error => console.log(error))
         })
-
-
-
+        
+        app.delete('/quotes', (req, res) => {
+            quotesCollection
+                .deleteOne({ name: req.body.name })
+                .then(result => {
+                    if(result.deletedCount === 0)
+                        return res.json('No quote to delete')
+                    res.json(`Deleted Darth Vader's quote`)
+                })
+                .catch(error => console.log(error))
+        })
     })
-    .catch(error => console.log(error))
-
-
-
 console.log('May Node be with you')
 
 
