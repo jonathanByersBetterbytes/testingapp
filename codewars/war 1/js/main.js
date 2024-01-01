@@ -1,36 +1,49 @@
-// Use console.table instead of console.log
-// We often use console.log to print some information, but sometimes it's not so intuitive.
 
-const foods = [
-    {
-      name: '🍔',
-      price: 30.89,
-      group: 1,
-    },
-    {
-      name: '🍨',
-      price: 20.71,
-      group: 1,
-    },
-    {
-      name: '🍿',
-      price: 10.31,
-      group: 2,
-    },
-    {
-      name: '🍵',
-      price: 5.98,
-      group: 2,
-    },
-  ]
-console.table(foods)
 
+
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+
+
+let str = 'string of words'
+function funky(str1){
+    let newStr = str1.split(' ').map(word => word.split('').reverse().join('')).join(' ')
+    console.log(newStr)
+}
+
+funky(str)
 
 
 const names2 = ['irish', 'daisy', 'anna'];
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let testVar2 = "This is not a pangram." // 
 let testVar3 = [2,1,1] // 
+// Use console.table instead of console.log
+// We often use console.log to print some information, but sometimes it's not so intuitive.
+
+// const foods = [
+//   {
+//     name: '🍔',
+//     price: 30.89,
+//     group: 1,
+//   },
+//   {
+//     name: '🍨',
+//     price: 20.71,
+//     group: 1,
+//   },
+//   {
+//     name: '🍿',
+//     price: 10.31,
+//     group: 2,
+//   },
+//   {
+//     name: '🍵',
+//     price: 5.98,
+//     group: 2,
+//   },
+// ]
+// console.table(foods)
 //console.log(foods.filter((value, i, foods) => console.log(value), 1)) //
 //console.log(strRev('SessionStack'));
 // console.log(diffNum(testVar3) == -1);
