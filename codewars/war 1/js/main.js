@@ -1,23 +1,43 @@
 
-// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+// arr scores, my score
+// find average and compare your score
+// return true or false if your better
 
-
-let str = 'string of words'
-
-function funky(str1){
-    str1 = str1.split(' ') // ['string','of','words']
-    str1 = str1.map(word => word.split('').reverse().join('')).join(' ')
-    console.log(str1)
+// add your score to arr
+// find average of all scores
+// compare your score to avg
+function compareScore(arr, myScore){
+    arr.push(myScore)
+    let avg = arr.reduce((tot,elm) => tot += elm, 0)
+    console.log(avg)
+    console.log(avg/arr.length < myScore ? true : false)
+    return (avg/arr.length < myScore ? true : false)
 }
-
 
 
 const names2 = ['irish', 'daisy', 'anna'];
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let testVar2 = "This is not a pangram." // 
-let testVar3 = [2,1,1] // 
+let testVar3 = [82,71,61,90] //
+let score = 99
+compareScore(testVar3, score)
 
-funky(str)
+
+
+
+
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+
+// let str = 'string of  words'
+
+// function funky(str1){
+//     str1 = str1.split(' ') // ['string','of','words']
+//     console.log(str1)
+//     str1 = str1.map(word => word.split('').reverse().join('')).join(' ')
+//     console.log(str1)
+// }
+
+// funky(str)
 
 // let str = 'string of words'
 // function funky(str1){
