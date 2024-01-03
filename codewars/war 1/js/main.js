@@ -5,19 +5,29 @@
 
 
 
-let str = 'string of words'
 function funky(str1){
     let newStr = str1.split(' ').map(word => word.split('').reverse().join('')).join(' ')
     console.log(newStr)
 }
 
-funky(str)
 
 
 const names2 = ['irish', 'daisy', 'anna'];
+let str = 'string of words'
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let testVar2 = "This is not a pangram." // 
 let testVar3 = [2,1,1] // 
+
+funky(str)
+
+// let str = 'string of words'
+// function funky(str1){
+//     let newStr = str1.split(' ').map(word => word.split('').reverse().join('')).join(' ')
+//     console.log(newStr)
+// }
+
+// funky(str)
+
 // Use console.table instead of console.log
 // We often use console.log to print some information, but sometimes it's not so intuitive.
 
