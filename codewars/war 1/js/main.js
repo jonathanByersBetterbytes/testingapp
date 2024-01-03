@@ -1,19 +1,18 @@
 
-
-
 // Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
 
 
+let str = 'string of words'
 
 function funky(str1){
-    let newStr = str1.split(' ').map(word => word.split('').reverse().join('')).join(' ')
-    console.log(newStr)
+    str1 = str1.split(' ') // ['string','of','words']
+    str1 = str1.map(word => word.split('').reverse().join('')).join(' ')
+    console.log(str1)
 }
 
 
 
 const names2 = ['irish', 'daisy', 'anna'];
-let str = 'string of words'
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let testVar2 = "This is not a pangram." // 
 let testVar3 = [2,1,1] // 
