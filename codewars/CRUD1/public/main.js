@@ -15,7 +15,7 @@ update.addEventListener('click', _ => {
     })
     .then(data => {
         console.log(data+' I putted')
-        window.location.reload()
+        window.location.reload(true)
     })
 })
 
@@ -34,9 +34,9 @@ deleteButton.addEventListener('click', _ => {
         if(res.ok) return res.json()
     })
     .then(data => {
-        console.log(data)
+        //console.log(data)
         if(data === 'No quote to delete') messageDiv.textContent = 'No Darth Vader to delete'
-        window.location.reload()
+        window.location.reload(true)
     })
 })
 

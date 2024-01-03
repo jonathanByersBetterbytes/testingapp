@@ -29,7 +29,7 @@ MongoClient.connect(uri)
             //res.sendFile(__dirname + '/index.html')
         })
         
-        app.put('/quotes', (req, res) => {
+        app.put('/quotes', (req, res) => { // Create/Update === post or put
             console.log(req.body+' put')
             quotesCollection
                 .insertOne(req.body)
@@ -38,7 +38,7 @@ MongoClient.connect(uri)
             
         })
         
-        app.post('/quotes', (req, res) => {  // Create/Update === post
+        app.post('/quotes', (req, res) => {  // Create/Update === post or put
             console.log(req.body+' testing')
             quotesCollection
                 .findOneAndUpdate(
