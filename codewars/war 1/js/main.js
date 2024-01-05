@@ -1,22 +1,40 @@
 
 const names2 = ['irish', 'daisy', 'anna'];
+
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let testVar2 = "This is not a pangram." // 
-let testVar3 =[82,71,61,90] //
-//let intPop1 = 1000, rate1 = 2.5, imigr1 = 50, desPop1 = 1200
+let testVar3 =[2,1,6,9] //
+let intPop1 = 1000, rate1 = 2, imigr1 = 50, desPop1 = 1200
+
+test = names2.splice(2,0,"complex","language")
+
+// p0 = 1000 , int or float, positive
+// rate 2% needs to be converted/100
+// imigration 50 per year
+// at year-end population count, round down
+// return numers of years it would be projected to hit 1,200 residents?
+
+function nbYear(intPop, rate, imigr, desPop){
+    rate = rate/100
+    let cnt = 0
+    for(;intPop<=desPop;cnt++){        
+        intPop = Math.floor(intPop * (1+rate)) + imigr
+    }
+    return cnt
+}
+console.log(nbYear(intPop1, rate1, imigr1, desPop1))
 
 
+// reverse only the words in place
+// let testVar1 = "The quick brown fox jumps over the lazy dog."
+// test = testVar1.split(' ').map(e=> e.split('').reverse().join('')).join(' ')
+// console.log(test)
 
-
-
-
-
-
-
-
-
-
-
+// console.log(testVar3.reduce((a,elm)=> a + elm, 0))
+// console.log(arr)
+// let arr = ["I", "study", "JavaScript"]
+// console.log(arr.splice(1, 1, ...names2))
+// console.log(arr)
 
 // number
 // console.log all values from 1 to number
@@ -41,14 +59,14 @@ let testVar3 =[82,71,61,90] //
 // desired population positive int
 // return num years to reach desired population
 
-let intPop1 = 1000, rate1 = 2.5, imigr1 = 50, desPop1 = 1200
+// let intPop1 = 1000, rate1 = 2.5, imigr1 = 50, desPop1 = 1200
 
-function nb_year(intPop, rate, imigr, desPop){
-    intPop = Math.floor(intPop*(1+rate/100)) + imigr
-    if(intPop >= desPop) return 1
-    return nb_Year(intPop, rate, imigr, desPop) + 1  
-}
-console.log(nb_year(intPop1, rate1, imigr1, desPop1))
+// function nbYear(intPop, rate, imigr, desPop){
+//     intPop = Math.floor(intPop*(1+rate/100)) + imigr
+//     if(intPop >= desPop) return 1
+//     return nbYear(intPop, rate, imigr, desPop) + 1  
+// }
+// console.log(nbYear(intPop1, rate1, imigr1, desPop1))
 
 //function nb_year(intPop, rate, imigr, desPop){
 //     // convert rate
