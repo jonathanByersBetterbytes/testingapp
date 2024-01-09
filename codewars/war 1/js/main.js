@@ -1,28 +1,95 @@
 
-const names2 = ['irish', 'daisy', 'anna'];
+
+let names2 = ['irish', 'daisy', 'anna', 'Ted'];
+let names3 = ['Dale', 'Dan', 'Harry'];
 
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
-let testVar2 = "This is not a pangram." // 
+let testVar2 = "~__~_~_~_~___~~~_~_~" // 14 changes
+let testVar4 = "red robin yellow jacket black 3 blue 4" // 3 changes
 let testVar3 =[2,1,6,9] //
 let intPop1 = 1000, rate1 = 2, imigr1 = 50, desPop1 = 1200
 
-test = names2.splice(2,0,"complex","language")
+// string of words and whitespace
+// eg: "red robin yellow jacket black 3 blue 4" etc
+// return string of objects with name and id from the words: 
+// "[{name : 'red', id : 'robin'}, {name : 'yellow', id : 'jacket'}...]"
 
-// p0 = 1000 , int or float, positive
-// rate 2% needs to be converted/100
-// imigration 50 per year
-// at year-end population count, round down
-// return numers of years it would be projected to hit 1,200 residents?
-
-function nbYear(intPop, rate, imigr, desPop){
-    rate = rate/100
-    let cnt = 0
-    for(;intPop<=desPop;cnt++){        
-        intPop = Math.floor(intPop * (1+rate)) + imigr
+// split string up into words by whitespace
+// concate words into name and id object {name: '', id: ''}
+// wrap in brakets
+// return string of objects (JSON)
+function strToJSON(str){
+    let words = str.split(' ')
+    let JSON = '['
+    for(let i=0;i<words.length-1;i++){
+        JSON = JSON + `{name : '${words[i]}', id : '${words[++i]}'}, ` // create object with name and 
     }
-    return cnt
+    JSON = JSON.slice(0, JSON.lastIndexOf(',')) // chop last comma
+    return JSON+']'
 }
-console.log(nbYear(intPop1, rate1, imigr1, desPop1))
+console.log(strToJSON(testVar4))
+
+
+// given string of ~ and _
+// if more than 20% of the string has changes from ~ to _
+// return "Throw Up" else "No Problem"
+
+// function howWasSnorkeling(str){
+//     let arr = str.split('')
+//     let lastElm = arr[0]
+//     let changedCnt = 0
+//     arr.forEach(element => {
+//         console.log(lastElm === element)
+//         if(lastElm !== element) changedCnt++  // did change?
+//         lastElm = element
+//     })
+//     console.log(`arr:  ${arr.length}`)
+//     console.log(`str:  ${str.length}`)
+//     console.log(`changedCnt:  ${changedCnt}`)
+//     console.log(`percent:  ${changedCnt/arr.length}`)
+//     console.log(`Bad?:  ${changedCnt/arr.length>0.2}`)
+//     return changedCnt/arr.length > 0.2 ? "Throw Up" : "No Problem"
+// }
+// get the length of string
+// count changes from ~ to _ or _ to ~ depending on start
+// determine if > 20%
+// return response
+
+//console.log(howWasSnorkeling(testVar4))
+// function howWasSnorkeling(str){
+//     let changedCnt = 0
+//     str.split('').reduce((first, second) => {
+//         first !== second ? changedCnt++ : '' // did change?
+//         return second
+//     })
+//     return changedCnt/str.length > 0.2 ? "Throw Up" : "No Problem"
+// }
+// console.log(howWasSnorkeling(testVar4))
+
+//let newArry = names2.splice(1,1,...names3) 
+
+//splice (startPlace,numToDelete,...arrToInsert)
+
+// test = names2.splice(2,0,"complex","language")
+
+// let newArry = names2.splice(1,1,...names3) 
+// console.log(newArry)
+// console.log(names2)
+// // p0 = 1000 , int or float, positive
+// // rate 2% needs to be converted/100
+// // imigration 50 per year
+// // at year-end population count, round down
+// // return numers of years it would be projected to hit 1,200 residents?
+
+// function nbYear(intPop, rate, imigr, desPop){
+//     rate = rate/100
+//     let cnt = 0
+//     for(;intPop<=desPop;cnt++){        
+//         intPop = Math.floor(intPop * (1+rate)) + imigr
+//     }
+//     return cnt
+// }
+// console.log(nbYear(intPop1, rate1, imigr1, desPop1))
 
 
 // reverse only the words in place
