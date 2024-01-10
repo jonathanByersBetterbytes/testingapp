@@ -9,6 +9,63 @@ let testVar4 = "red robin yellow jacket black 3 blue 4" // 3 changes
 let testVar3 =[2,1,6,9] //
 let intPop1 = 1000, rate1 = 2, imigr1 = 50, desPop1 = 1200
 
+// str of currency (cost)
+// extract numeric value
+// return
+//  '$120.34' => 120.34
+
+function extractCurrencyValue(str){
+    return +str.substring(1)
+}
+console.log(extractCurrencyValue('$134.53'))
+// remove '$' sign
+// convert to number
+//return number
+
+
+
+// str, maxlength
+// checks length of str, if it exceeds maxlength -
+// replaces the end of str with ellipsis char '…'
+// make str.length === maxlength
+// 
+
+// function truncate(str, maxNum){
+//     if(str.length<maxNum) return str
+//     return str.slice(0,maxNum-1)+'…'
+// }
+// console.log(truncate('make tacos tuesday', 10))
+// console.log(truncate('make tacos tuesday', 10).length)
+// check string length exceeds maxlength
+// if less return str
+// if move truncate one less than max length and add '…' to end
+// return new str
+
+
+
+// str check for spam 'viagra' or 'XXX' => true else false
+//take in string, check if contains
+// 'buy ViAgRA now' => true
+// 'free xxxxx' => true
+// 'inocent rabbit' => false
+
+// function checkSpam(str){
+//     if(!str) return str
+//     str = str.toLowerCase()
+//     return str.indexOf('xxx') !== -1 || str.indexOf('viagra') !== -1
+// }
+// console.log(checkSpam('InoceViAgRAbbit'))
+
+// uppder case first letter eg: 'john' => 'John'
+// function ucFirst(str){
+//     if(!str) return str
+//     str = str[0].toUpperCase() + str.slice(1)
+//     return str
+// }
+
+// ucFirst('john')
+
+
 // string of words and whitespace
 // eg: "red robin yellow jacket black 3 blue 4" etc
 // return string of objects with name and id from the words: 
@@ -18,16 +75,16 @@ let intPop1 = 1000, rate1 = 2, imigr1 = 50, desPop1 = 1200
 // concate words into name and id object {name: '', id: ''}
 // wrap in brakets
 // return string of objects (JSON)
-function strToJSON(str){
-    let words = str.split(' ')
-    let JSON = '['
-    for(let i=0;i<words.length-1;i++){
-        JSON = JSON + `{name : '${words[i]}', id : '${words[++i]}'}, ` // create object with name and 
-    }
-    JSON = JSON.slice(0, JSON.lastIndexOf(',')) // chop last comma
-    return JSON+']'
-}
-console.log(strToJSON(testVar4))
+// function strToJSON(str){
+//     let words = str.split(' ')
+//     let JSON = '['
+//     for(let i=0;i<words.length-1;i++){
+//         JSON = JSON + `{name : '${words[i]}', id : '${words[++i]}'}, ` // create object with name and 
+//     }
+//     JSON = JSON.slice(0, -2) // chop last comma
+//     return JSON+']'
+// }
+// console.log(strToJSON(testVar4))
 
 
 // given string of ~ and _
