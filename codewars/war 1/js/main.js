@@ -1,23 +1,86 @@
 
-
-let names2 = ['irish', 'daisy', 'anna', 'Ted'];
-let names3 = ['Dale', 'Dan', 'Harry'];
-
+let namesArr = ['irish', 'daisy', 'anna', 'Ted'];
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
-let testVar2 = "~__~_~_~_~___~~~_~_~" // 14 changes
-let testVar4 = "red robin yellow jacket black 3 blue 4" // 3 changes
-let testVar3 =[2,1,6,9] //
-let intPop1 = 1000, rate1 = 2, imigr1 = 50, desPop1 = 1200
+
+result = welcome(['John', 'Smith'], 'Phoenix', 'Arizona')
+console.log(result)
+document.querySelector('H2').innerText = result
+
+console.log('varVar ' + varVtar)
+console.log('letVar ' + letVar)
+
+// varVtar = 'varVar'
+// letVar = 'letVar'
+
+
+
+
+// [name, name, ...]  city, state
+// ret  'Hello, name name ...! Welcome to city, state!
+// space between names
+
+// set base str = 'Hello, 
+// loop through names
+// add '! Welcom to ' + city + ' ' + state - use ticks
+
+var varVtar = 'varVar'
+let t = 'letVar'
+
+function welcome(nameArr, city, state){
+    return `Hello, ${nameArr.join(' ')}! Welcome to ${city}, ${state}!`
+}
+
+// function welcome(nameArr, city, state){
+//     let welcMess = 'Hello,'
+//     for(let i=0;i<nameArr.length;i++){
+//         welcMess += ' ' + nameArr[i]
+//     }
+//     welcMess += `! Welcome to ${city}, ${state}!`
+//     return welcMess
+// }
+
+// num  positive > 0 
+// ret sum 
+
+// ex 2 => 3  (1+2)
+
+// take in num and start count a 1
+// increment and sum until num reached
+// return sum total
+
+// function sum(num){
+//     let sum = 0
+//     for(let i=1;i<=num;i++){
+//         sum += i
+//     }
+//     return sum
+// }
+
+//console.log(sum(8))
+
+// take in two numbers representing UTF-16 letters
+// console log all letters from num1 to num2
+
+// function displayChars(num1, num2){
+//     let str = ''
+//     for(let i = num1;i<num2;i++){
+//         str += String.fromCodePoint(num1++)
+
+//     }
+//     console.log(str)
+// }
+// displayChars(0,65)
+
 
 // str of currency (cost)
 // extract numeric value
 // return
 //  '$120.34' => 120.34
 
-function extractCurrencyValue(str){
-    return +str.substring(1)
-}
-console.log(extractCurrencyValue('$134.53'))
+// function extractCurrencyValue(str){
+//     return +str.substring(1)
+// }
+// console.log(extractCurrencyValue('$134.53'))
 // remove '$' sign
 // convert to number
 //return number
