@@ -1,19 +1,335 @@
 
-let namesArr = ['irish', 'daisy', 'anna', 'Ted'];
+let namesArr = ['irish', 'daisy', 'anna', 'Ted', 'Jon'];
+let arrNumsAsStr = ['26','11','11','15','22','8','27']
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
+let str2 = 'A1jB2Cd2e'
+let str1 = '2416789'
+let arrNums = [121, 122, 123, 124, 125, 120, 122, 132]
+let h = -1, bounce = 0.66, window3 = 1.5;
 
-result = welcome(['John', 'Smith'], 'Phoenix', 'Arizona')
+// arr names of people that liked an item
+// ret display text as shown in examples:
+// like count >= 4 the number in 'and 2 others' increases
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Peter", "Alex"]                 -->  "Peter and Alex like this"
+// ["Peter", "Alex", "Mark"]         -->  "Peter, Alex and Mark like this"
+// ["Peter", "Alex", "Mark", "Max"]  -->  "Peter, Alex and 2 others like this"
+
+function runFuc(arr){
+    // check for no one display
+    if(arr.length === 0) return 'no one likes this'
+    let display = '', name1, name2, name3, cnt=0
+    // loop through names 
+    for(;cnt < arr.length;cnt++){
+        if(cnt === 0) name1 = arr[cnt] // 'Peter ' 
+        else if(cnt === 1) name2 = arr[cnt] // 'Peter and Alex ' 
+        else if(cnt === 2) name3 = arr[cnt] // 'Peter, Alex and Mark ' 
+        console.log(arr[cnt])
+    }
+    // when 4 >= only show 2 names and a count of cnt + ' others'
+    if(cnt === 1) display = `${name1} `
+    else if(cnt === 2) display = `${name1} and ${name2} ` 
+    else if(cnt === 3) display = `${name1}, ${name2} and ${name3} `
+    else display = `${name1}, ${name2} and ${cnt-2} others `
+    //return display adding common text
+    return display + (arr.length === 1 ? 'likes this' : 'like this')
+}
+//const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
+
+result = runFuc(namesArr)
 console.log(result)
 document.querySelector('H2').innerText = result
 
-console.log('varVar ' + varVtar)
-console.log('letVar ' + letVar)
+// array of nums
+//ret str made up of four parts:
+//4 char 'word' < made of first and last two chars in array, order as read left to right
+// same after sorting arrr in ascend
+// same after sort arr in descending
+// same after conv arr into ascii and sort alphabetical
+// ret four parts joined by '-'
 
-// varVtar = 'varVar'
-// letVar = 'letVar'
+// ex: 1110 1115
+// [111, 112, 113, 114, 115, 113, 114, 110]  -->  "oprn-nors-sron-nors"
+// [66, 101, 55, 111, 113]                   -->  "Beoq-7Boq-qoB7-7Boq"
+// [99, 98, 97, 96, 81, 82, 82]              -->  "cbRR-QRbc-cbRQ-QRbc"
+//'yzz-xy}-}yx-xy}'
+// function runFuc(arr){
+//     function codeFP(arr){
+//         return String.fromCodePoint(arr[0]) 
+//         + String.fromCodePoint(arr[1]) 
+//         + String.fromCodePoint(arr[arr.length-2]) 
+//         + String.fromCodePoint(arr[arr.length-1])+'-'
+//     }    
+//     let result = codeFP(arr) // join first and last two numbers converted to ascii
+//     result += codeFP(arr.sort((a,b) => a-b)) // sort asc do same as above
+//     result += codeFP(arr.sort((a,b) => b-a)) // sort desc do same as above
+//     arr = arr.map(x=>String.fromCodePoint(x)).sort() // conv arr into ascii and sort alphabetical
+//     return result += arr[0]+arr[1]+arr[arr.length-2]+arr[arr.length-1]  // return parts joined by '-'
+// }
+
+// str digits
+// replace dig's below 5 with '0' and 5 and above '1'
+// ret the resulting str
+
+// '1387' => '0011'
+
+// function runFuc(seqArr){
+//     // split str into arr
+//     // eval < 5 = replace '0' else '1'
+//     // join arr
+//     return seqArr.split('').map(x => +x<5?'0':'1').join('')
+// }
+
+// array of nums in string 
+// nums corespond to letters of alpha in reverse  ex: a=26, z=1, 
+// also account for: '!'==27,'?'==28,' '==29
+// ret str
+
+// ex: ['26','22','27'] ==> 'ae!'
+
+// const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
+// const alpha = ' zyxwvutsrqponmlkjihgfedcba!? '
+// const runFuc = str => str.map(x => alpha[x]).join('')
+
+// function runFuc(seqArr){
+//     let newStr = ''
+//         for(i in seqArr){       // loop through arr
+//             switch(seqArr[i]){  // set up a switch stmt with all cases 1-29
+//                 case '29': 
+//                     newStr += ' '
+//                     break;
+//                 case '28': 
+//                     newStr += '?'
+//                     break;                    
+//                 case '27': 
+//                     newStr += '!'
+//                     break;
+//                 case '26': 
+//                     newStr += 'a'
+//                     break;
+//                 case '25': 
+//                     newStr += 'b'
+//                     break;
+//                 case '24': 
+//                     newStr += 'c'
+//                     break;
+//                 case '23': 
+//                     newStr += 'd'
+//                     break;
+//                 case '22': 
+//                     newStr += 'e'
+//                     break;
+//                 case '21': 
+//                     newStr += 'f'
+//                     break;
+//                 case '20': 
+//                     newStr += 'g'
+//                     break;
+//                 case '19': 
+//                     newStr += 'h'
+//                     break;
+//                 case '18': 
+//                     newStr += 'i'
+//                     break;
+//                 case '17': 
+//                     newStr += 'j'
+//                     break;
+//                 case '16': 
+//                     newStr += 'k'
+//                     break;
+//                 case '15': 
+//                     newStr += 'l'
+//                     break;
+//                 case '14': 
+//                     newStr += 'm'
+//                     break;
+//                 case '13': 
+//                     newStr += 'n'
+//                     break;
+//                 case '12': 
+//                     newStr += 'o'
+//                     break;
+//                 case '11': 
+//                     newStr += 'p'
+//                     break;
+//                 case '10': 
+//                     newStr += 'q'
+//                     break;
+//                 case '9': 
+//                     newStr += 'r'
+//                     break;
+//                 case '8': 
+//                     newStr += 's'
+//                     break;
+//                 case '7': 
+//                     newStr += 't'
+//                     break;
+//                 case '6': 
+//                     newStr += 'u'
+//                     break;
+//                 case '5': 
+//                     newStr += 'v'
+//                     break;
+//                 case '4': 
+//                     newStr += 'w'
+//                     break;
+//                 case '3': 
+//                     newStr += 'x'
+//                     break;
+//                 case '2': 
+//                     newStr += 'y'
+//                     break;
+//                 case '1': 
+//                     newStr += 'z'
+//                     break;
+//             }
+//         } 
+//     return newStr
+// }
+
+// string
+// are all chars unique?
+// bool
+
+// const runFuc = str => new Set(str).size === str.length
+// function runFuc(seq){
+    // split and sort chars
+    //return new Set(seq).size === seq.length
+    //.sort((a,b)=>a-b)
+    // loop through and see if any match
+    // for(let i=0;i<seq.length-1;i++){
+    //     if(seq[i] === seq[i+1]) return false
+    // }
+    //return seq
+// }
+// string
+// are all chars unique?
+// bool
+
+// function runFuc(seq){
+//     // split and sort chars
+//     seq = seq.split('').sort((a,b)=>a-b)
+//     // loop through and see if any match
+//     // for(let i=0;i<seq.length-1;i++){
+//     //     if(seq[i] === seq[i+1]) return false
+//     // }
+//     return seq
+// }
+//const runFuc = arrNums => arrNums.map(el => -el)
+
+// sequenced string of numbers
+// 0 < length string < 140
+// 0 < smallest number < 1 000 000 000
+// return smallest possible first num in the sequence
+
+//let sequence = "123" 
+// "123" -> [1, 2, 3] -> 1
+// "91011" -> [9, 10, 11] -> 9
+// "17181920" -> [17, 18, 19, 20] -> 17
+// "9899100" -> [98, 99, 100] -> 98
+// "121122123" -> [121, 122, 123] -> 121
+// "1235" -> [1235] -> 1235
+// "101" -> [101] -> 101
+
+// function runFuc(seq){
+//     // split the string into singles
+//     let singleSplit = seq.split('')
+//     // is there a first reocorance of the first digit
+//     let smallestSingle = parseInt(singleSplit[0])
+//     for(let i = 1;i<singleSplit.length;i++){
+//         let nextDig = parseInt(singleSplit[i])
+//         console.log(nextDig<)
+
+//     }
+//     // if the next number is less than the previous
+//     return smallestSingle
+// }
+
+// let h = -1, bounce = 0.66, window3 = 1.5;
+// height num>0, bouce num (0< num <1), window num < height
+// if any conditions fail return -1
+// ball seen if greater than window height
+// return how many times ball is seen bouncing up and down
+
+// - h = 3, bounce = 0.66, window = 1.5, result is 3
+// - h = 3, bounce = 1, window = 1.5, result is -1 
+
+// check for conditions met
+// ball is dropped 3 meters +1 
+// ball comes up to 3*0.66 = 1.98 bounce height
+// bounce is greater than window height +1
+// ball fails +1
+// bounces up to bounce *0.66 = 1.98*0.66 = 1.3068 bounce height
+// ball can no longer be seen
+// return 3 times
+
+// function runFuc(h1, bounce1, window1){
+//     if(h1 < 0 || bounce1 >= 1 || bounce1 <= 0 || window1 > h1) return -1
+//     let cnt = 1
+//     while(true){
+//         h1 *= bounce1
+//         console.log(h1)
+//         if(h1>window1) cnt += 2
+//         else return cnt;
+//     } 
+// }
+//const runFuc = arrNums => arrNums.map(el => -el)
+// result = runFuc(h, bounce, window3)
+// console.log(result)
+// document.querySelector('H2').innerText = result
+
+// string
+// convert each char into it's ASCII num
+// join them together to make one string call total1
+// replace all 7's with 1's and put into a different string total2
+// retrun difference of the sum of digits in total1 and sum of digits in total2
+// 'ABC' => 'A'= 65, 'B' =66, 'C' = 67 ==> 656667
+// total1 = 656667
+//               ^
+// total2 = 656661
+//               ^
+// (6 + 5 + 6 + 6 + 6 + 7)
+// - (6 + 5 + 6 + 6 + 6 + 1)
+// -------------------------
+//                        6
+
+// function runFuc(str){
+//     str = str.split('').map(elm => elm.codePointAt(0)).join()
+//     let sum1 = 0
+//     for(let i in str) {
+//         if(str[i]==='7') sum1++
+//     }
+//     return sum1*6
+// }
+// //const runFuc = arrNums => arrNums.map(el => -el)
+// result = runFuc(str2)
+// console.log(result)
+// document.querySelector('H2').innerText = result
+
+
+// // arr of nums
+// // additive inverse, positives become negative vs versa
+// //[1,-2,3] => [-1,2,-3]
+// // map each num to *-1
+
+// // function runFuc(arrNums){
+// //     return arrNums.map(elm => elm*-1)
+// // }
+// const runFuc = arrNums => arrNums.map(el => -el)
+// result = runFuc(arrNums)
+// console.log(result)
+// document.querySelector('H2').innerText = result
 
 
 
+// string of words
+// array of words
+// function runFuc(str){
+//     return str.split(' ')
+// }
+// const runFuc = str => str.split(' ')
 
 // [name, name, ...]  city, state
 // ret  'Hello, name name ...! Welcome to city, state!
@@ -23,12 +339,11 @@ console.log('letVar ' + letVar)
 // loop through names
 // add '! Welcom to ' + city + ' ' + state - use ticks
 
-var varVtar = 'varVar'
-let t = 'letVar'
+// result = welcome(['John', 'Smith'], 'Phoenix', 'Arizona')
 
-function welcome(nameArr, city, state){
-    return `Hello, ${nameArr.join(' ')}! Welcome to ${city}, ${state}!`
-}
+// function welcome(nameArr, city, state){
+//     return `Hello, ${nameArr.join(' ')}! Welcome to ${city}, ${state}!`
+// }
 
 // function welcome(nameArr, city, state){
 //     let welcMess = 'Hello,'
