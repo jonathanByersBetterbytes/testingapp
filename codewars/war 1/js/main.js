@@ -18,7 +18,7 @@ let h = -1, bounce = 0.66, window3 = 1.5;
 // ["Peter", "Alex", "Mark", "Max"]  -->  "Peter, Alex and 2 others like this"
 
 function runFuc(arr){
-    // check for no one display
+    // check for no one display 
     if(arr.length === 0) return 'no one likes this'
     let display = '', name1, name2, name3, cnt=0
     // loop through names 
