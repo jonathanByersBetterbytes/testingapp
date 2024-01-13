@@ -18,29 +18,43 @@ let h = -1, bounce = 0.66, window3 = 1.5;
 // ["Peter", "Alex", "Mark", "Max"]  -->  "Peter, Alex and 2 others like this"
 
 function runFuc(arr){
-    // check for no one display 
     if(arr.length === 0) return 'no one likes this'
-    let display = '', name1, name2, name3, cnt=0
-    // loop through names 
-    for(;cnt < arr.length;cnt++){
-        if(cnt === 0) name1 = arr[cnt] // 'Peter ' 
-        else if(cnt === 1) name2 = arr[cnt] // 'Peter and Alex ' 
-        else if(cnt === 2) name3 = arr[cnt] // 'Peter, Alex and Mark ' 
-        console.log(arr[cnt])
-    }
-    // when 4 >= only show 2 names and a count of cnt + ' others'
-    if(cnt === 1) display = `${name1} `
-    else if(cnt === 2) display = `${name1} and ${name2} ` 
-    else if(cnt === 3) display = `${name1}, ${name2} and ${name3} `
-    else display = `${name1}, ${name2} and ${cnt-2} others `
-    //return display adding common text
-    return display + (arr.length === 1 ? 'likes this' : 'like this')
+    else if (arr.length === 1) return `${arr[0]} likes this`
+    else if (arr.length ===2) return `${arr[0]} and ${arr[1]} like this`
+    else if (arr.length === 3) return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`
+    return `${arr[0]}, ${arr[1]} and ${arr.length-2} others like this`
 }
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
 result = runFuc(namesArr)
 console.log(result)
 document.querySelector('H2').innerText = result
+
+// arr names of people that liked an item
+// ret display text as shown in examples:
+// like count >= 4 the number in 'and 2 others' increases
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Peter", "Alex"]                 -->  "Peter and Alex like this"
+// ["Peter", "Alex", "Mark"]         -->  "Peter, Alex and Mark like this"
+// ["Peter", "Alex", "Mark", "Max"]  -->  "Peter, Alex and 2 others like this"
+
+function runFuc(arr){//     
+    if(arr.length === 0) return 'no one likes this' // check for no one display 
+    let display = '', name1, name2, name3, cnt=0    
+    for(;cnt < arr.length;cnt++){ // loop through names 
+        if(cnt === 0) name1 = arr[cnt] // 'Peter ' 
+        else if(cnt === 1) name2 = arr[cnt] // 'Peter and Alex ' 
+        else if(cnt === 2) name3 = arr[cnt] // 'Peter, Alex and Mark ' 
+        console.log(arr[cnt])
+    }
+    if(cnt === 1) display = `${name1} ` // when 4 >= only show 2 names and a count of cnt + ' others'
+    else if(cnt === 2) display = `${name1} and ${name2} ` 
+    else if(cnt === 3) display = `${name1}, ${name2} and ${name3} `
+    else display = `${name1}, ${name2} and ${cnt-2} others `
+    return display + (arr.length === 1 ? 'likes this' : 'like this')  //return display adding common text
+}
 
 // array of nums
 //ret str made up of four parts:
