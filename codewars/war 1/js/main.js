@@ -16,7 +16,7 @@ let h = -1, bounce = 0.66, window3 = 1.5;
 // ["Peter", "Alex"]                 -->  "Peter and Alex like this"
 // ["Peter", "Alex", "Mark"]         -->  "Peter, Alex and Mark like this"
 // ["Peter", "Alex", "Mark", "Max"]  -->  "Peter, Alex and 2 others like this"
-// test
+// test 
 function runFuc(arr){
     if(arr.length === 0) return 'no one likes this'
     else if (arr.length === 1) return `${arr[0]} likes this`
