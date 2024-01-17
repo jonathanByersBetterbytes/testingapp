@@ -1,34 +1,87 @@
 
 let namesArr = ['irish', 'daisy', 'anna', 'Ted', 'Jon'];
 let arrNumsAsStr = ['26','11','11','15','22','8','27']
+let arrScores = ["3:1", "2:2", "0:1","3:1", "2:8", "4:1","3:1", "2:2", "0:1", "0:1"]
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
-let str2 = 'A1jB2Cd2e'
+let str2 = 'pOLitiCI2aN'
 let str1 = '2416789'
 let arrNums = [121, 122, 123, 124, 125, 120, 122, 132]
 let h = -1, bounce = 0.66, window3 = 1.5;
 
-// arr names of people that liked an item
-// ret display text as shown in examples:
-// like count >= 4 the number in 'and 2 others' increases
+// an array of string scores in format ['x:y']
+// x is our score, y other team
+// ret number of points our team x got by these rules:
+// if x > y: 3 points (win)
+// if x < y: 0 points (loss)
+// if x = y: 1 point (tie)
+// points are between 0 and 4
+// always 10 games
 
-// []                                -->  "no one likes this"
-// ["Peter"]                         -->  "Peter likes this"
-// ["Peter", "Alex"]                 -->  "Peter and Alex like this"
-// ["Peter", "Alex", "Mark"]         -->  "Peter, Alex and Mark like this"
-// ["Peter", "Alex", "Mark", "Max"]  -->  "Peter, Alex and 2 others like this"
-// test 
+//["3:1", "2:2", "0:1", ...]
+
 function runFuc(arr){
-    if(arr.length === 0) return 'no one likes this'
-    else if (arr.length === 1) return `${arr[0]} likes this`
-    else if (arr.length ===2) return `${arr[0]} and ${arr[1]} like this`
-    else if (arr.length === 3) return `${arr[0]}, ${arr[1]} and ${arr[2]} like this`
-    return `${arr[0]}, ${arr[1]} and ${arr.length-2} others like this`
+    // cycle through the array
+
+    // see if x > y + 3points
+    // x<y = 0
+    // x===y 1
+    //return score
+    let score = 0
+    arr.map(x => {
+        if(x[0] > x[2]) score += 3
+        if(x[0] === x[2]) score += 1
+    })
+    return score
 }
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
-result = runFuc(namesArr)
+result = runFuc(arrScores)
 console.log(result)
 document.querySelector('H2').innerText = result
+
+
+// str, adjust for cases
+// str 
+
+// Input	    Output
+// "Jabroni"	"Patron Tequila"
+// "School Counselor"	"Anything with Alcohol"
+// "Programmer"	"Hipster Craft Beer"
+// "Bike Gang Member"	"Moonshine"
+// "Politician"	"Your tax dollars"
+// "Rapper"	"Cristal"
+// anything else	"Beer"
+
+// function runFuc(str){
+//     // adjust case
+//     str = str.toLowerCase()
+//     // set up switch case return 
+//     switch(str){
+//         case "jabroni": return "Patron Tequila"
+//         case "school counselor": return "Anything with Alcohol"
+//         case "programmer":	return "Hipster Craft Beer"
+//         case "bike gang member": return	"Moonshine"
+//         case "politician": return	"Your tax dollars"
+//         case "rapper": return	"Cristal"        
+//     }
+//     return	"Beer"
+// }
+
+// function runFuc(str){
+//     // replace errors and return 
+//     return str.slice(0, 5)
+// }
+
+// string of text, only has numbers by mistake
+// return corrected text
+// 5 => S
+// 0 => O
+// 1 => I
+
+// function runFuc(str){
+//     // replace errors and return
+//     return str.replaceAll('5','S').replaceAll('0','O').replaceAll('1','I')
+// }
 
 // arr names of people that liked an item
 // ret display text as shown in examples:
@@ -40,21 +93,21 @@ document.querySelector('H2').innerText = result
 // ["Peter", "Alex", "Mark"]         -->  "Peter, Alex and Mark like this"
 // ["Peter", "Alex", "Mark", "Max"]  -->  "Peter, Alex and 2 others like this"
 
-function runFuc(arr){//     
-    if(arr.length === 0) return 'no one likes this' // check for no one display 
-    let display = '', name1, name2, name3, cnt=0    
-    for(;cnt < arr.length;cnt++){ // loop through names 
-        if(cnt === 0) name1 = arr[cnt] // 'Peter ' 
-        else if(cnt === 1) name2 = arr[cnt] // 'Peter and Alex ' 
-        else if(cnt === 2) name3 = arr[cnt] // 'Peter, Alex and Mark ' 
-        console.log(arr[cnt])
-    }
-    if(cnt === 1) display = `${name1} ` // when 4 >= only show 2 names and a count of cnt + ' others'
-    else if(cnt === 2) display = `${name1} and ${name2} ` 
-    else if(cnt === 3) display = `${name1}, ${name2} and ${name3} `
-    else display = `${name1}, ${name2} and ${cnt-2} others `
-    return display + (arr.length === 1 ? 'likes this' : 'like this')  //return display adding common text
-}
+// function runFuc(arr){//     
+//     if(arr.length === 0) return 'no one likes this' // check for no one display 
+//     let display = '', name1, name2, name3, cnt=0    
+//     for(;cnt < arr.length;cnt++){ // loop through names 
+//         if(cnt === 0) name1 = arr[cnt] // 'Peter ' 
+//         else if(cnt === 1) name2 = arr[cnt] // 'Peter and Alex ' 
+//         else if(cnt === 2) name3 = arr[cnt] // 'Peter, Alex and Mark ' 
+//         console.log(arr[cnt])
+//     }
+//     if(cnt === 1) display = `${name1} ` // when 4 >= only show 2 names and a count of cnt + ' others'
+//     else if(cnt === 2) display = `${name1} and ${name2} ` 
+//     else if(cnt === 3) display = `${name1}, ${name2} and ${name3} `
+//     else display = `${name1}, ${name2} and ${cnt-2} others `
+//     return display + (arr.length === 1 ? 'likes this' : 'like this')  //return display adding common text
+// }
 
 // array of nums
 //ret str made up of four parts:
