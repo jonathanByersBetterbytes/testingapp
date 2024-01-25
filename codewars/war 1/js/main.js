@@ -10,18 +10,42 @@ let h = -1, bounce = 0.66, window3 = 1.5;
 let arr1 = [1, 2, 5];
 
 let arr = ["I", "study", "JavaScript"];
-//remove element study using splice
+// num,
+// log all nums FROM 1 to that num
+// BUT if div by 3 log 'fizz'
+// BUT if div by 5 log 'buzz'
+// BUT if div by 3 & 5 log 'fizzbuzz'
 
 function runFuc(arr){
-    
-    return arr.concat("1","beast")  // returns new array
+    for(let i = 1; i <= arr; i++){
+        if(i % 3 === 0 && i % 5 === 0) console.log('fizzbuzz')
+        else if( i % 3 === 0 ) console.log('fizz')
+        else if( i % 5 === 0 ) console.log('buzz')
+        else console.log(i)
+    }
+    return "done"  // returns new array
 }
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
-result = runFuc(arr)
+result = runFuc(20)
 console.log(result) 
 document.querySelector('H2').innerText = result
 
+// num,
+// log all nums FROM 1 to that num
+// BUT if div by 3 log 'fizz'
+// BUT if div by 5 log 'buzz'
+// BUT if div by 3 & 5 log 'fizzbuzz'
+
+// function runFuc(arr){
+//     for(let i = 1; i <= arr; i++){
+//         if(i % 3 === 0 && i % 5 === 0) console.log('fizzbuzz')
+//         else if( i % 3 === 0 ) console.log('fizz')
+//         else if( i % 5 === 0 ) console.log('buzz')
+//         else console.log(i)
+//     }
+//     return "done"  // returns new array
+// }
 
 // function runFuc(arr){    
 //     return arr.concat("1","beast")  // returns new array
