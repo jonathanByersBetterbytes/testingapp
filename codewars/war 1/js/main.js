@@ -7,6 +7,35 @@ let str2 = 'pOLitiCI2aN'
 let str1 = '2416789'
 let arrNums = [121, 122, 123, 124, 125, 120, 122, 132]
 let h = -1, bounce = 0.66, window3 = 1.5;
+let arr1 = [1, 2, 5];
+
+let arr = ["I", "study", "JavaScript"];
+//remove element study using splice
+
+function runFuc(arr){
+    
+    return arr.concat("1","beast")  // returns new array
+}
+//const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
+
+result = runFuc(arr)
+console.log(result) 
+document.querySelector('H2').innerText = result
+
+
+// function runFuc(arr){    
+//     return arr.concat("1","beast")  // returns new array
+// }
+
+// function runFuc(arr){
+//     arr.splice(-1,0,3,4)  // alters the array, no return unless a remove
+//     return arr
+// }
+
+// function runFuc(arr){
+//     return arr.slice(0,1) // does not alter the array, returns a new array
+// }
+// git rm --cashed index.html
 
 // an array of string scores in format ['x:y']
 // x is our score, y other team
@@ -19,26 +48,20 @@ let h = -1, bounce = 0.66, window3 = 1.5;
 
 //["3:1", "2:2", "0:1", ...]
 
-function runFuc(arr){
-    // cycle through the array
+// function runFuc(arr){
+//     // cycle through the array
 
-    // see if x > y + 3points
-    // x<y = 0
-    // x===y 1
-    //return score
-    let score = 0
-    arr.map(x => {
-        if(x[0] > x[2]) score += 3
-        if(x[0] === x[2]) score += 1
-    })
-    return score
-}
-//const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
-
-result = runFuc(arrScores)
-console.log(result) 
-document.querySelector('H2').innerText = result
-
+//     // see if x > y + 3points
+//     // x<y = 0
+//     // x===y 1
+//     //return score
+//     let score = 0
+//     arr.map(x => {  //["3:1", "2:2", "0:1", ...]
+//         if(x[0] > x[2]) score += 3 // skips the colon : so just first and third char
+//         if(x[0] === x[2]) score += 1
+//     })
+//     return score
+// }
 
 // str, adjust for cases
 // str 
