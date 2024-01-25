@@ -36,7 +36,7 @@ function runFuc(arr){
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
 result = runFuc(arrScores)
-console.log(result)
+console.log(result) 
 document.querySelector('H2').innerText = result
 
 
