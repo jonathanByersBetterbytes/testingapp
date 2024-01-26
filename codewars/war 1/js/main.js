@@ -8,28 +8,30 @@ let str1 = '2416789'
 let arrNums = [121, 122, 123, 124, 125, 120, 122, 132]
 let h = -1, bounce = 0.66, window3 = 1.5;
 let arr1 = [1, 2, 5];
-
 let arr = ["I", "study", "JavaScript"];
-// num,
-// log all nums FROM 1 to that num
-// BUT if div by 3 log 'fizz'
-// BUT if div by 5 log 'buzz'
-// BUT if div by 3 & 5 log 'fizzbuzz'
+
+// 
 
 function runFuc(arr){
-    for(let i = 1; i <= arr; i++){
-        if(i % 3 === 0 && i % 5 === 0) console.log('fizzbuzz')
-        else if( i % 3 === 0 ) console.log('fizz')
-        else if( i % 5 === 0 ) console.log('buzz')
-        else console.log(i)
-    }
-    return "done"  // returns new array
+    arr = arr.map(item => item.length)
+    return arr  // returns new array
 }
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
-result = runFuc(20)
+result = runFuc(["I", "study", "JavaScript"])
 console.log(result) 
 document.querySelector('H2').innerText = result
+
+
+// function runFuc(arr){
+//     arr.splice(2,0,'complex', 'language')
+//     return arr  // returns new array
+// }
+
+// function runFuc(arr){
+//     delete arr[2]
+//     return arr  // returns new array
+// }
 
 // num,
 // log all nums FROM 1 to that num
