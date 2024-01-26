@@ -5,23 +5,63 @@ let arrScores = ["3:1", "2:2", "0:1","3:1", "2:8", "4:1","3:1", "2:2", "0:1", "0
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let str2 = 'pOLitiCI2aN'
 let str1 = '2416789'
-let arrNums = [121, 122, 123, 124, 125, 120, 122, 132]
+let arrNums = [121, 142, 123, 124, 125, 120, 122, 132]
 let h = -1, bounce = 0.66, window3 = 1.5;
 let arr1 = [1, 2, 5];
+let arrStr = ['1', '2', '5'];
 let arr = ["I", "study", "JavaScript"];
-
+let army = {
+    minAge: 18,
+    maxAge: 27,
+    canJoin(user) {
+        console.log(this.minAge)
+      return user.age >= this.minAge && user.age < this.maxAge;
+    }
+};
+let users = [
+    {age: 16},
+    {age: 20},
+    {age: 23},
+    {age: 30}
+];
 // 
-
-function runFuc(arr){
-    arr = arr.map(item => item.length)
-    return arr  // returns new array
+let ageRule = i => i.age >= this.minAge && i.age < this.maxAge
+function runFuc(arr){    
+    //let can = users.filter(arr.canJoin, users)
+    let can = users.filter(army.canJoin, army)
+    //army.canJoin(users[0])
+    return can
 }
+// arrNums.sort((a,b) => a-b) 
+//alert(arrNums)
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
-result = runFuc(["I", "study", "JavaScript"])
+const result = runFuc(army)
 console.log(result) 
 document.querySelector('H2').innerText = result
 
+// function runFuc(['1', '2', '5']){    
+//     return arr.reduce((a,b)=>+b+a,0)  // yeilds 8 not '125'
+// }
+
+// arrNums.sort((a,b) => a-b)
+// alert(arrNums)
+// function runFuc(arr){    
+//     arr.sort((a,b) => {
+//         alert(`${a} <> ${b}`)
+//         return a - b
+//     })
+//     return arr
+// }
+// function runFuc(arr){
+//     arr.sort((a,b) => a - b)
+//     return arr  // returns same array
+// }
+
+// function runFuc(arr){
+//     arr = arr.map(item => item.length)
+//     return arr  // returns new array
+// }
 
 // function runFuc(arr){
 //     arr.splice(2,0,'complex', 'language')
