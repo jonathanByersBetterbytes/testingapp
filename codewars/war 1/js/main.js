@@ -26,18 +26,24 @@ let users = [
 ];
 // 
 
-function runFuc(arr){    
-    //let can = users.filter(arr.canJoin, users)
-    let can = users.filter(army.canJoin, army)
-    //army.canJoin(users[0])
-    return can
+function runFuc(arr){        
+    return arr.filter(i => i.age < 24)
 }
 
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
-const result = runFuc(army)
+const result = runFuc(users)
 console.log(result) 
 document.querySelector('H2').innerText = result
+
+
+// function runFuc(arr){        
+//     return arr.reduce((agr, i) => { return i.age + agr }, 0)
+// }
+
+// function runFuc(arr){        
+//     return arr.filter(i => i.age < 24)
+// }
 
 // function runFuc(['1', '2', '5']){    
 //     return arr.reduce((a,b)=>+b+a,0)  // yeilds 8 not '125'
