@@ -25,15 +25,14 @@ let users = [
     {age: 30}
 ];
 // 
-let ageRule = i => i.age >= this.minAge && i.age < this.maxAge
+
 function runFuc(arr){    
     //let can = users.filter(arr.canJoin, users)
     let can = users.filter(army.canJoin, army)
     //army.canJoin(users[0])
     return can
 }
-// arrNums.sort((a,b) => a-b) 
-//alert(arrNums)
+
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
 const result = runFuc(army)
