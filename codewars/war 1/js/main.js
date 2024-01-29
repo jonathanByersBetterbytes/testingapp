@@ -24,18 +24,36 @@ let users = [
     {age: 23},
     {age: 30}
 ];
+const items = [
+    { name: 'Bike', price: 100 },
+    { name: 'TV', price: 200},
+    { name: 'Album', price: 10 },
+    { name: 'Book', price: 500 }
+    ]
 // 
 
 function runFuc(arr){        
-    return arr.filter(i => i.age < 24)
+    return arr.some(i => i.price < 101)  // true
 }
 
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
-const result = runFuc(users)
+const result = runFuc(items)
 console.log(result) 
 document.querySelector('H2').innerText = result
 
+
+// function runFuc(arr){        
+//     return arr.every(i => i.price < 101)  // is every item in the arrary under 101?   true
+// }
+
+// function runFuc(arr){        
+//     return arr.some(i => i.price < 101)  // is there one in the arrary?  true
+// }
+
+// function runFuc(arr){        
+//     return arr.find(i => i.name === 'TV')  // first single object
+// }
 
 // function runFuc(arr){        
 //     return arr.reduce((agr, i) => { return i.age + agr }, 0)
