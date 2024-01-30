@@ -9,7 +9,9 @@ let arrNums = [121, 142, 123, 124, 125, 120, 122, 132]
 let h = -1, bounce = 0.66, window3 = 1.5;
 let arr1 = [1, 2, 5];
 let arrStr = ['1', '2', '5'];
-let arr = ["I", "study", "JavaScript"];
+let arr = ["I", "study", "JavaScript"]; 
+let arr2= ["I", "study", "MongoDB"];
+let arr3 = ["I", "study", "React"]; 
 let army = {
     minAge: 18,
     maxAge: 27,
@@ -33,15 +35,35 @@ const items = [
 // 
 
 function runFuc(arr){        
-    return arr.some(i => i.price < 101)  // true
+    return arr.reduce((a, b) => Math.max(a, b), -Infinity)  //
 }
 
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
 
-const result = runFuc(items)
+const result = runFuc(arrNums)
 console.log(result) 
 document.querySelector('H2').innerText = result
 
+
+// function runFuc(arr){        
+//     return arr.reduce((a, b) => Math.max(a, b), -Infinity)  //
+// }
+
+// function runFuc(arr){        
+//     return arr.concat(arr2, arr3)  //
+// }
+
+// function runFuc(arr){        
+//     return arr.join(' and ')  //
+// }
+ 
+// function runFuc(arr){        
+//     return arr.toString()  // true
+// }
+
+// function runFuc(arr){        
+//     return arr.includes(121)  // true
+// }
 
 // function runFuc(arr){        
 //     return arr.every(i => i.price < 101)  // is every item in the arrary under 101?   true
