@@ -1,58 +1,95 @@
-let army = {
-    minAge: 18,
-    maxAge: 27,
-    canJoin(user) {
-        console.log(this.minAge)
-      return user.age >= this.minAge && user.age < this.maxAge;
-    }
-};
-let users = [
-    {age: 16},
-    {age: 20},
-    {age: 23},
-    {age: 30}
-];
-const items = [
-    { name: 'Bike', price: 100 },
-    { name: 'TV', price: 200},
-    { name: 'Album', price: 10 },
-    { name: 'Book', price: 500 }
-    ]
-let namesArr = ['irish', 'daisy', 'anna', 'Ted', 'Jon'];
-let arrNumsAsStr = ['26','11','11','15','22','8','27']
-let arrScores = ["3:1", "2:2", "0:1","3:1", "2:8", "4:1","3:1", "2:2", "0:1", "0:1"]
+
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let str2 = 'pOLitiCI2aN'
 let str1 = '2416789'
 let arrNums = [121, 142, 123, 124, 125, 120, 122, 132]
-let h = -1, bounce = 0.66, window3 = 1.5;
-let arr1 = [1, 2, 5];
-let arrStr = ['1', '2', 5];
-let arr = ["I", "study", "JavaScript"]; 
-let arr2= ["I", "study", "MongoDB"];
-let arr3 = ["I", "study", "React"]; 
-let html = "<div>test test<p>test3333</p><div>"
-// strHtml
-// cycle through '<div>' change the next '<div>' => '</div>'
+let arr1 = [2,2,'w','O']
 
-function runFuc(strHTML){   
-    // split by '<div
-    // loop through and find every other '<div>'
-    let chopDownStr = ''
-    // for(let i = 0;strHTML.indexOf('<div') != -1;i++){
-    //     if(i % 2 === 0) chopDownStr += strHTML.slice()
-    //     else strHTML += arrDivsHtml[i].replace('<div>', '</div>')
-    // }
-    chopDownStr = strHTML.slice(0, strHTML.indexOf('<div')+4)  // chop
-    chopDownStr = chopDownStr + strHTML.slice(strHTML.indexOf('<div')+4).replace('<div>', '</div>')
-    return chopDownStr
+// leg size 1-4 1 for "^ ^", 2 for "/\ /\", 3 for "/╲ ╱\", 4 for "╱╲ ╱╲"
+// body size 1-3 1 for "( )", 2 for "(( ))", 3 for "((( )))"
+// mouth w || W
+// eye - symmetric 2 to power body size
+// /\((OOwOO))/\
+// /╲(((0000w0000)))╱\
+// ^(oWo)^
+//  ╱╲ ╱╲.
+//  𝈻 ＼ ／᜴   ᜴  ᜵
+
+//  ⧹╲⎝⧹༼◕ ͜oﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞ.◕ ༽⧸⎠╱⟋╱
+// (ȏ-ȏ)----|̉̉̉̉̉̉̉̉̉̉̉̉̉
+
+
+// const foods = [
+//   {
+//     name: '🍔',
+//     price: 30.89,
+//     group: 1,
+//   },
+//   {
+//     name: '🍨',
+//     price: 20.71,
+//     group: 1,
+//   },
+//   {
+//     name: '🍿',
+//     price: 10.31,
+//     group: 2,
+//   },
+//   {
+//     name: '🍵',
+//     price: 5.98,
+//     group: 2,
+//   },
+// ]
+// console.table(foods)
+
+function runFuc(arr){
+    // get leg, body, mouth, eye
+    // [0,1,2,3]
+    let leg, bodyLeft, bodyRight, mouth, eye
+    let spider 
+    if(arr[0] === 2) leg = '//\\'  // leg
+    else if(arr[1] === 2){  //body
+        bodyLeft = '(('
+        bodyRight = '))'
+    } 
+    else if(arr[2] === 'w') mouth = 'w'
+    else if(arr[3] === 2) eye = '//\\'
+
+
+
+
+
+    // add eyes to each side of mouth
+
+    // add body to each side of eyes
+
+    // add legs to each side of eyes
+
+    return 'chopDownStr'
 }
 
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
-const result = runFuc(html)
-console.log(result) 
-document.querySelector('H2').innerText = result
+// const result = runFuc(arr1)
+// console.log(result) 
+// document.querySelector('H2').innerText = result
 
+
+// strHtml
+// cycle through '<div>' change the next '<div>' => '</div>'
+
+// function runFuc(strHTML){   
+//     // split by '<div
+//     // loop through and find every other '<div>'
+//     let chopDownStr = ''
+//     // for(let i = 0;strHTML.indexOf('<div') != -1;i++){
+//     //     if(i % 2 === 0) chopDownStr += strHTML.slice()
+//     //     else strHTML += arrDivsHtml[i].replace('<div>', '</div>')
+//     // }
+//     chopDownStr = strHTML.slice(0, strHTML.indexOf('<div')+4)  // chop
+//     chopDownStr = chopDownStr + strHTML.slice(strHTML.indexOf('<div')+4).replace('<div>', '</div>')
+//     return chopDownStr
+// }
 
 // int humanYears
 // ret arr of [humandYears, catYears, dogYears]
