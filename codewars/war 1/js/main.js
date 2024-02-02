@@ -1,17 +1,3 @@
-
-let namesArr = ['irish', 'daisy', 'anna', 'Ted', 'Jon'];
-let arrNumsAsStr = ['26','11','11','15','22','8','27']
-let arrScores = ["3:1", "2:2", "0:1","3:1", "2:8", "4:1","3:1", "2:2", "0:1", "0:1"]
-let testVar1 = "The quick brown fox jumps over the lazy dog." // 
-let str2 = 'pOLitiCI2aN'
-let str1 = '2416789'
-let arrNums = [121, 142, 123, 124, 125, 120, 122, 132]
-let h = -1, bounce = 0.66, window3 = 1.5;
-let arr1 = [1, 2, 5];
-let arrStr = ['1', '2', '5'];
-let arr = ["I", "study", "JavaScript"]; 
-let arr2= ["I", "study", "MongoDB"];
-let arr3 = ["I", "study", "React"]; 
 let army = {
     minAge: 18,
     maxAge: 27,
@@ -32,18 +18,85 @@ const items = [
     { name: 'Album', price: 10 },
     { name: 'Book', price: 500 }
     ]
-// 
+let namesArr = ['irish', 'daisy', 'anna', 'Ted', 'Jon'];
+let arrNumsAsStr = ['26','11','11','15','22','8','27']
+let arrScores = ["3:1", "2:2", "0:1","3:1", "2:8", "4:1","3:1", "2:2", "0:1", "0:1"]
+let testVar1 = "The quick brown fox jumps over the lazy dog." // 
+let str2 = 'pOLitiCI2aN'
+let str1 = '2416789'
+let arrNums = [121, 142, 123, 124, 125, 120, 122, 132]
+let h = -1, bounce = 0.66, window3 = 1.5;
+let arr1 = [1, 2, 5];
+let arrStr = ['1', '2', 5];
+let arr = ["I", "study", "JavaScript"]; 
+let arr2= ["I", "study", "MongoDB"];
+let arr3 = ["I", "study", "React"]; 
+let html = "<div>test test<p>test3333</p><div>"
+// strHtml
+// cycle through '<div>' change the next '<div>' => '</div>'
 
-function runFuc(arr){        
-    return arr.reduce((a, b) => Math.max(a, b), -Infinity)  //
+function runFuc(strHTML){   
+    // split by '<div
+    // loop through and find every other '<div>'
+    let chopDownStr = ''
+    // for(let i = 0;strHTML.indexOf('<div') != -1;i++){
+    //     if(i % 2 === 0) chopDownStr += strHTML.slice()
+    //     else strHTML += arrDivsHtml[i].replace('<div>', '</div>')
+    // }
+    chopDownStr = strHTML.slice(0, strHTML.indexOf('<div')+4)  // chop
+    chopDownStr = chopDownStr + strHTML.slice(strHTML.indexOf('<div')+4).replace('<div>', '</div>')
+    return chopDownStr
 }
 
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
-
-const result = runFuc(arrNums)
+const result = runFuc(html)
 console.log(result) 
 document.querySelector('H2').innerText = result
 
+
+// int humanYears
+// ret arr of [humandYears, catYears, dogYears]
+// humanYears >= 1 
+// 15 cat years first, 9 cat years second, +4 each after
+// same but +5 after second
+// 4 humanYears => 15 + 9 + 4 + 4 === cat
+// 4 humanYears => 15 + 9 + 5 + 5 === dog
+// loop through cases for numHumanYears 1 and 2, times remaining years by animal type
+
+// function runFuc(num){   
+//     let totCat = 24
+//     if(num === 1) return [num, 15, 15]
+//     if(num === 2) return [num, 24, 24]
+//     totCat += 4 * (num-2)    
+//     return [num, totCat, totCat+(num-2)]
+// }
+
+// arr ints as strings and nums
+// sum of all values as if they nums
+// ['5', 5]  => 10
+// loop through converting every element to num and sum
+
+// function runFuc(arr8){   
+//     return arr8.reduce((agg, item) => +item + agg, 0)
+// }
+
+// string
+// remove first and last char and return
+// ignore < 2 length
+
+// function runFuc(arr8){   
+//     return arr8.slice(1, -1)
+// }
+// number
+// return a negative number or zero
+// -0.05 => -0.05
+// 5 => -5
+//check if num < 0 ? do nothing
+// check if num > 0 ? 
+
+// function runFuc(arr8){   
+//     return arr8 > 0 ? arr8 *= -1 : arr8
+// }
 
 // function runFuc(arr){        
 //     return arr.reduce((a, b) => Math.max(a, b), -Infinity)  //
