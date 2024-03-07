@@ -13,7 +13,7 @@ function runFuc(arr){
         console.log(arr)
         return arr.split('').reduce((acc,char) => acc + char, '')
     }
-}
+} 
 // Function Expression can be stored in a variable
 // const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')  
 const result = runFuc(str2)
