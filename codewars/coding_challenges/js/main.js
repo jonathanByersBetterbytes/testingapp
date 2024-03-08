@@ -6,14 +6,14 @@ let arrNums = [121, 142, 123, 124, 125, 120, 122, 132]
 let arr1 = [2,2,'w','O']
 
 
-// Function Declaration
+// Function Declaration 
 let cnt = 0
 function runFuc(arr){
     if(cnt++ < 20){
         console.log(arr)
         return arr.split('').reduce((acc,char) => acc + char, '')
     }
-} 
+}
 // Function Expression can be stored in a variable
 // const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')  
 const result = runFuc(str2)
