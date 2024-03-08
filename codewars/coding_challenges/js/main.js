@@ -5,6 +5,40 @@ let str1 = '2416789'
 let arrNums = [121, 142, 123, 124, 125, 120, 122, 132]
 let arr1 = [2,2,'w','O']
 
+
+// Function Declaration
+let cnt = 0
+function runFuc(arr){
+    if(cnt++ < 20){
+        console.log(arr)
+        return arr.split('').reduce((acc,char) => acc + char, '')
+    }
+}
+// Function Expression can be stored in a variable
+// const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')  
+const result = runFuc(str2)
+console.log(result) 
+document.querySelector('H2').innerText = result
+
+
+
+
+
+
+// let cnt = 0
+// function runFuc(arr){
+//     if(cnt++ < 20){
+//         console.log(arr)
+//         if(arr === '') return ''
+//         else return runFuc(arr.substr(1)) + arr[0]  // recursion
+//     }
+// }
+
+// function runFuc(arr){
+
+//     return arr.slice(2, 4) + arr[0]  // index, count from start
+// }
+
 // leg size 1-4 1 for "^ ^", 2 for "/\ /\", 3 for "/╲ ╱\", 4 for "╱╲ ╱╲"
 // body size 1-3 1 for "( )", 2 for "(( ))", 3 for "((( )))"
 // mouth w || W
@@ -43,38 +77,39 @@ let arr1 = [2,2,'w','O']
 // ]
 // console.table(foods)
 
-function runFuc(arr){
-    // get leg, body, mouth, eye
-    // [0,1,2,3]
-    let leg, bodyLeft, bodyRight, mouth, eye
-    let spider 
-    if(arr[0] === 2) leg = '//\\'  // leg
-    else if(arr[1] === 2){  //body
-        bodyLeft = '(('
-        bodyRight = '))'
-    } 
-    else if(arr[2] === 'w') mouth = 'w'
-    else if(arr[3] === 2) eye = '//\\'
 
+// function runFuc(arr){
 
-
-
-
-    // add eyes to each side of mouth
-
-    // add body to each side of eyes
-
-    // add legs to each side of eyes
-
-    return 'chopDownStr'
-}
+//     return '⧹╲⎝⧹༼◕oﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞ. ͜oﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞﱞ.g◕༽⧸⎠╱⟋╱'
+// }
 
 //const runFuc = str => str.reduce((a,b)=>a+'★zyxwvutsrqponmlkjihgfedcba!? '[b],'')
-// const result = runFuc(arr1)
-// console.log(result) 
-// document.querySelector('H2').innerText = result
+
+// function runFuc(arr){
+//     // get leg, body, mouth, eye
+//     // [0,1,2,3]
+//     let leg, bodyLeft, bodyRight, mouth, eye
+//     let spider 
+//     if(arr[0] === 2) leg = '//\\'  // leg
+//     else if(arr[1] === 2){  //body
+//         bodyLeft = '(('
+//         bodyRight = '))'
+//     } 
+//     else if(arr[2] === 'w') mouth = 'w'
+//     else if(arr[3] === 2) eye = '//\\'
 
 
+
+
+
+//     // add eyes to each side of mouth
+
+//     // add body to each side of eyes
+
+//     // add legs to each side of eyes
+
+//     return 'chopDownStr'
+// }
 // strHtml
 // cycle through '<div>' change the next '<div>' => '</div>'
 
