@@ -8,10 +8,10 @@ let arr1 = [2,2,'w','O']
 
 // Function Declaration 
 let cnt = 0
-function runFuc(arr){
+function runFuc(x){
     if(cnt++ < 20){
-        console.log(arr)
-        return arr.split('').reduce((acc,char) => acc + char, '')
+        //console.log(arr)
+        return [...x].reduce((acc,char)=>char+acc,'')
     }
 }
 // Function Expression can be stored in a variable
@@ -23,6 +23,33 @@ document.querySelector('H2').innerText = result
 
 
 
+
+
+
+// let cnt = 0
+// function runFuc(x){
+//     if(cnt++ < 20){
+//         //console.log(arr)
+//         if(x >= 1) return x * runFuc(x-1)  // recursion
+//         else return 1
+//     }
+// }
+
+// let cnt = 0
+// function runFuc(arr){
+//     if(cnt++ < 20){
+//         //console.log(arr)
+//         return [...arr].reduce((acc,char) => char + acc, '')
+//     }
+// }
+
+// let cnt = 0
+// function runFuc(arr){
+//     if(cnt++ < 20){
+//         console.log(arr)
+//         return arr.split('').reduce((acc,char) => acc + char, '')
+//     }
+// }
 
 
 // let cnt = 0
