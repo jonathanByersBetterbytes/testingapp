@@ -9,6 +9,9 @@
   "author": "Obosi Philip",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
   }
 }
