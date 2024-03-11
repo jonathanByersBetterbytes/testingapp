@@ -11,5 +11,8 @@ function hammingDistance(stringA, stringB) {
 }
 
 
+let result = palindromeChecker('raceicar')
+console.log(result)
+document.querySelector('h2').innerText = result
 
-module.exports = hammingDistance
+//module.exports = hammingDistance

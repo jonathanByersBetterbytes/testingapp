@@ -1,4 +1,14 @@
 
+// create an actionable button in javascript, make it say "hello"
+const bigBut = document.createElement('button')
+// put text
+bigBut.textContent ='Click Me to Say Hello!'
+// add event listener to say hello
+bigBut.addEventListener('click', () => alert('Well Hello to You!'))
+// add to page
+bTon.appendChild(bigBut)
+
+
 let testVar1 = "The quick brown fox jumps over the lazy dog." // 
 let str2 = 'pOLitiCI2aN'
 let str1 = '2416789'
