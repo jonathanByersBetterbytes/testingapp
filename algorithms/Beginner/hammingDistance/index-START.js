@@ -8,7 +8,7 @@ E.g hammingDistance('rover', 'river') // should return 1
 
 function hammingDistance(stringA, stringB) {
     // Code goes here
-}
+} 
 
 
 let result = palindromeChecker('raceicar')
