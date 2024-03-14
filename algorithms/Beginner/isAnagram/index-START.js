@@ -9,21 +9,28 @@ don't. E.g
 // 'listen' => 'silent' === true
 // with character map
 function isAnagram(stringA, stringB) {
-    // write a funtion to create a charMap
-    let createCharMap = str => {
-        let charMap = {}
-        for(let char of str){ 
+    // create a charMap funct
+    const createCharMap = str => {
+        // create an object
+        const charMap = {}    
+        // loop through object and check if hasOwnProperty, increment if so, initialize with 1 if not
+        for(char of str){
             if(charMap.hasOwnProperty(char)) charMap[char]++
             else charMap[char] = 1
         }
+        // return map
         return charMap
     }
+    // are two strings same length? return false if not
     if(stringA.length === stringB.length){
-        let stringAMap = createCharMap(stringA)
-        let stringbMap = createCharMap(stringB)
-        for(let char in stringAMap)
-            if(stringAMap[char] !== stringbMap[char]) // return are they the same?
+        // create char maps for each word
+        const charMapA = createCharMap(stringA)
+        const charMapB = createCharMap(stringB)
+        // loop through one map checking if both charMaps are the same, return false if not
+        for(i in charMapA)
+            if(charMapA[i] !== charMapB[i])
                 return false
+        // return true if same
         return true
     }else return false
 }
