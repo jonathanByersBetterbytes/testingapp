@@ -17,5 +17,8 @@ function mergeArrays(...arrays) {
     
 }
 
+let result = mergeArrays([1,2,3,3,3], [1,4,5,2])
+console.log(result)
+document.querySelector('h2').innerText = result
 
 module.exports = mergeArrays
