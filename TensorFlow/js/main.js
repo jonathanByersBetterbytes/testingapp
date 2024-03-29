@@ -21,7 +21,7 @@
             
             let tensorOutput = movenet.predict(tf.expandDims(resizedTensor))
             let arrayOutput = await tensorOutput.array()
-            
+             
             console.log(arrayOutput)
         }
         console.log('hey')
